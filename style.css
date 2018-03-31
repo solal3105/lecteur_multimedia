@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block; } body {line-height: 1; } ol, ul {list-style: none; } blockquote, q {quotes: none; } blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none; } table {border-collapse: collapse; border-spacing: 0; } body{
+	overflow: auto;
+}
+body{
+	width: 100vw;
+	background-color: #fff;
+  background: url(bg.jpg) no-repeat center fixed; 
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+	overflow: hidden;
+	height: 100vh;
+
+}
+p,h1,h4,h6{
+	font-family: 'Roboto', sans-serif;
+}
+#load{
+	width: 64%;
+	float: left;
+	overflow: auto;
+  height: 100vh;
+	max-height: 100vh;
+	overflow-x: hidden;
+}
+#load div{
+	background-color: rgba(255,255,255,0.55);
+	padding: 20px 30px;
+ 	display: block;
+ 	margin: 0 auto;
+ 	transition: 0.3s;
+}
+#load div:nth-child(2n){
+	background-color: rgba(255,255,255,0.50);
+}
+#load div:hover{
+	transform: scale(1.03);
+	cursor: pointer;
+	background-color: #fff;
+}
+video{
+	display: block;
+	width: 100%;
+	background-color: #000;
+}
+#player{
+	width: 30%;
+	float:right;
+	height: 100vh;
+	background-color: rgba(255,255,255,0.9);
+	padding: 1% 3% 0 3%;
+	height: 99%;
+	-moz-box-shadow: 2px 2px 20px #000; 
+  	-webkit-box-shadow: 2px 2px 20px #000; 
+ 	box-shadow: 2px 2px 20px #000;
+ 	overflow: auto;
+}
+#play,#pause{
+	background-color: #eee;
+	border: 0;
+	color: #333;
+	min-width: 50px;
+	min-height: 50px;
+	border-radius: 25px;
+	position: relative;
+	top: -10px;
+		-moz-box-shadow: 2px 2px 20px #ccc; 
+  	-webkit-box-shadow: 2px 2px 20px #ccc; 
+ 	box-shadow: 2px 2px 20px #ccc; 
+ 	margin: 0 0 0 10px;
+ 	transition: 0.5s;
+}
+
+#play:hover, #pause:hover{
+	transform: scale(1.1);
+}
+#controls{
+	text-align: left;
+	background-color: #fff;
+	-moz-box-shadow: 2px 2px 20px #ccc; 
+  	-webkit-box-shadow: 2px 2px 20px #ccc; 
+ 	box-shadow: 2px 2px 20px #ccc; 
+ 	z-index: 1;
+
+}
+video{
+	-moz-box-shadow: 2px 2px 20px #ccc; 
+  	-webkit-box-shadow: 2px 2px 20px #ccc; 
+ 	box-shadow: 2px 2px 20px #ccc; 
+ 	max-width: 100%;
+}
+.itemListPodcast{
+	background-color:white;
+	padding:20px;
+	margin: 0 0 40px 0;
+		-moz-box-shadow: 10px 10px 20px #ccc; 
+  	-webkit-box-shadow: 10px 10px 20px #ccc; 
+ 	box-shadow: 10px 10px 20px #ccc; 
+}
+.itemListPodcast h4{
+	font-size: 30px;
+}
+.itemListPodcast h6{
+	font-size: 15px;
+	padding: 10px 0;
+}
+h1{
+	margin: 10px 0;
+	font-weight: 800;
+	color: #555;
+	font-size: 30px;
+	text-align: justify;
+
+}
+div #rechercher{
+	background-color: rgba(255,255,255,0.8);
+
+}
+div #rechercher:hover{
+	transform: none;
+	border: 0;
+}
+#rechercher h1{
+	color: #000;
+	font-variant: small-caps;
+}
+#player button{
+	border: 0;
+	padding: 10px;
+	margin: 0 5px 0 0;
+	transition: 0.3s;
+}
+#player button:hover{
+	-moz-box-shadow: 2px 2px 20px #ccc; 
+  	-webkit-box-shadow: 2px 2px 20px #ccc; 
+ 	box-shadow: 2px 2px 20px #ccc; 
+}
+/*
+.stickyheader{
+	background-color: red;
+	position: fixed;
+}
+.stickycontent{
+	background-color: blue;
+	position: fixed;
+}*/
+.slider {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 10rem;
+  height: 0.25rem;
+  outline: none;
+  border-radius: 0.25rem;
+  background-color: #ccc;
+  position: relative;
+  top: -5px;
+  right: -10px;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #FFF;
+  border: 3px solid #333;
+  border-radius: 1rem;
+  cursor: pointer;
+
+}
+input[type="text"]{
+	width: 100%;
+	border: 0;
+	padding: 10px 0;
+	font-size: 20px;
+	background-color: rgba(1,1,1,0);
+	border-bottom: 1px solid #333;
+	margin-bottom: 10px;
+}
+#rechercher input[type="button"]{
+	width: 100%;
+	padding: 5px 0;
+	margin: 5px 0;
+	border: 2px solid #720177;
+	background-color: #fff;
+	border-radius: 20px;
+
+}
+#load div button{
+ 	background-color: #720177;
+ 	border-radius: 3px;
+ 	border: 0;
+ 	color: #fff;
+ 	margin: 5px 0;
+ 	padding: 5px;
+
+ }

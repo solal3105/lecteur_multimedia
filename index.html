@@ -1,76 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Lecteur Multimédia</title>
+	<title>Lecteur Multimedia</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="index.js"></script>
 </head>
 <body>
+	<div id="load">
+		<div id="rechercher">
+			<h1>chercher votre podcast</h1>
+			<input type="text" id="txt" name="" value="http://radiofrance-podcast.net/podcast09/rss_13940.xml">
+			<input id="valider" type="button" value="Rechercher le podcast" onclick="httpGetAsync()"></input>
+		</div>
+		
+	</div>
+	<div id="player">
+		<h1>Liste de lecture</h1>
+		<video src="" id="mainVideo"></video>
+		<div id="controls">
+			<button id="play" onclick="playVid()">Play</button>
+			<button id="pause" onclick="pauseVid()">Pause</button>
+			<input type="range" id="volume" class="slider" onchange="volumeVid()" min="0" max="1" step="0.1"></button>
+		</div>
+
+	</div>
 </body>
 </html>
-<script type="text/javascript">
-
-httpGetAsync("https://crossorigin.me/http://radiofrance-podcast.net/podcast09/rss_13940.xml");
-
-
-function httpGetAsync(theUrl) {
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-	xmlHttp.onreadystatechange = function() {
-		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-			var txt = xmlHttp.responseXML;
-			console.log(txt);
-			//document.getElementById("img").src = txt.getElementsByTagName("url")[0].childNodes[0].nodeValue;
-			for (var i = 1; i < 10; i++) {
-				console.log(i);
-
-				var div = document.createElement('div');
-				div.class
-				var title = document.createElement('p');
-				div.appendChild(title);
-				title.id = "title"+i;
-
-				var link = document.createElement('p');
-				div.appendChild(link);
-				link.id = "link"+i;
-
-				var description = document.createElement('p');
-				div.appendChild(description);
-				description.id = "description"+i;
-
-				var audio = document.createElement('audio');
-				div.appendChild(audio);
-				audio.id = "audio"+i;
-
-				var copyright = document.createElement('p');
-				div.appendChild(copyright);
-				copyright.id = "copyright"+i;
-
-				var lastBuildDate = document.createElement('p');
-				div.appendChild(lastBuildDate);
-				lastBuildDate.id = "lastBuildDate"+i;
-
-
-				document.getElementsByTagName('body')[0].appendChild(div);
-        		title.innerHTML=i;
-
-				document.getElementById("title"+i).innerHTML = txt.getElementsByTagName("title")[i].childNodes[0].nodeValue;
-				document.getElementById("link"+i).innerHTML = txt.getElementsByTagName("link")[i].childNodes[0].nodeValue;
-				document.getElementById("description"+i).innerHTML = txt.getElementsByTagName("description")[i].childNodes[0].nodeValue;
-				document.getElementById("audio"+i).src=getElementById("audio"+i)[i].getAttribute('url');
-				console.log(txt.getElementsByTagName("enclosure")[i].getAttribute('url'));
-				console.log(txt.getElementsByTagName("title")[i].childNodes[0]);
-
-				//if (txt.getElementsByTagName("enclosure")!== undefined) {
-				//	document.getElementById("enclosure"+i).innerHTML = txt.getElementsByTagName("enclosure")[i].childNodes[0].nodeValue;
-				//}
-				//document.getElementById("language"+i).innerHTML = txt.getElementsByTagName("language")[i].childNodes[0].nodeValue;
-				//document.getElementById("copyright"+i).innerHTML = txt.getElementsByTagName("copyright")[i].childNodes[0].nodeValue;
-				//document.getElementById("lastBuildDate"+i).innerHTML = txt.getElementsByTagName("lastBuildDate")[i].childNodes[0].nodeValue;
-			}
-		}
-	}
-	xmlHttp.send(null);
-}
-
-</script>
-
