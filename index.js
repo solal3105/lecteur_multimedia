@@ -101,7 +101,7 @@ function pauseVid() {
 function playVid() {
     player=document.getElementById("mainVideo");
     if (player.paused) {
-        if (player.getAttribute('src') === ''){
+        if (player.getAttribute('src') === 'none'){
             console.log("player : ");
             console.log(player);
             var mp3 = document.getElementsByClassName("itemListPodcast")[0].getElementsByTagName("p")[0].innerHTML;
@@ -116,14 +116,16 @@ function playVid() {
         }
     }
     else{
-        player.play();
+        player.pause();
+        
     }
 
 }
 function pauseVid() {
     player=document.getElementById("mainVideo");
     if (player.played){
-        player.pause();
+        player.src='none';
+        console.log(player);
     }
 
 }
@@ -156,7 +158,7 @@ function addListPodcast() {
 
     btn_haut = document.createElement("button");
     btn_haut.className = "btn btn-primary";
-    btn_haut.innerHTML = "Up";
+    btn_haut.innerHTML = "Monter";
     btn_haut.addEventListener("click", up);
 
     /*
@@ -167,7 +169,7 @@ function addListPodcast() {
     */
     btn_suppr = document.createElement("button");
     btn_suppr.className = "btn btn-danger";
-    btn_suppr.innerHTML = "Delete";
+    btn_suppr.innerHTML = "Supprimer";
     btn_suppr.addEventListener("click", suppr);
 
     p = document.createElement("p");
